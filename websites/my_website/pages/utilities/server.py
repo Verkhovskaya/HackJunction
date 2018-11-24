@@ -19,17 +19,18 @@ sys.path.append(root_path)
 print(program_path)
 from shared_utils import meta_header
 
+
 @route('/')
 def hello():
     domain = request.get_header('host')
-    text = open(page_path + '/html/header.html').read().\
-           replace("$$meta_header$$", meta_header(request))+ \
-        open(page_path + '/html/root_page.html').read().\
+    text = open(root_path + '/html/header.html').read().\
+           replace("$$header_nav$$", meta_header(request))+ \
+        open(root_path + '/html/root_page.html').read().\
            replace("$$domain$$", domain).\
            replace("$$domain$$", domain).\
            replace("$$domain$$", domain).\
            replace("$$domain$$", domain) +\
-        open(page_path + '/html/footer.html').read()
+        open(root_path + '/html/footer.html').read()
     return text
 
 
