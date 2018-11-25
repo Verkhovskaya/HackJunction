@@ -12,11 +12,13 @@ else:
 
 program_path = os.getcwd()
 if "/root" in program_path:
-    root_path = "/root"
+    root_path = "/root/main_website"
     page_path = "/root/" + program_path.split("/")[-1]
+    file_path = '/root/my_website'
 else:
     root_path = program_path
     page_path = program_path
+    file_path = '/Users/2017-A/Dropbox/hackathon/HackJunction/websites/my_website'
 
 
 @route('/')
@@ -26,9 +28,11 @@ def hello():
         open(root_path + "/html/footer.html").read()
     return text
 
+
 @route("/img")
 def img():
     return static_file("front_page.jpg", root_path + "/data")
+
 
 @post('/setup_new_page')
 def setup_new_page():
@@ -37,7 +41,7 @@ def setup_new_page():
     print(ip_address, password)
     new_password = ""
     print("ssh root@" + ip_address)
-    child = pexpect.spawn("scp -r /Users/2017-A/Dropbox/hackathon/HackJunction/websites/my_website root@" + ip_address + ":/root")
+    child = pexpect.spawn("scp -r " + file_path + " root@" + ip_address + ":/root")
     child.logfile = sys.stdout
 
     i = child.expect(["The authenticity .*", "root@" + ip_address + "'s password.*", "ssh: connect.*"])
@@ -60,11 +64,15 @@ def setup_new_page():
     child.logfile = sys.stdout
     child.expect("root@.*")
     child.sendline(password)
+    child.expect("root@.*")
     child.sendline("cd my_website")
-    child.sendline("pwd")
-    child.sendline("python initial_setup.py")
+    child.expect("~/my_website")
+    child.sendline("python initial_setup.py " + ip_address)
+    child.expect("Done initial setup")
     child.sendline("python reset_server.py")
-    return redirect("http://" + ip_address + "/new_page/")
+    child.expect("Done reset server")
+    print("DONE")
+    return redirect("http://" + ip_address + "/new")
 
 
 run(host='0.0.0.0', port=port, debug=True)

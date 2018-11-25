@@ -7,17 +7,20 @@ if len(sys.argv) == 1:
 else:
     port = sys.argv[1]
 
-if len(sys.argv) == 1:
-    root_path = os.getcwd()
+program_path = os.getcwd()
+if "/root" in program_path:
+    root_path = "/root"
+    page_path = "/root/" + program_path.split("/")[-1]
 else:
-    root_path = sys.argv[2]
+    root_path = program_path
+    page_path = program_path
 
 
 @route('/')
 def hello():
-    text = open(root_path + "/html/header.html").read() + \
-        open(root_path + '/html/root_page.html').read() +\
-        open(root_path + "/html/footer.html").read()
+    text = open(page_path + "/html/header.html").read() + \
+        open(page_path + '/html/root_page.html').read() +\
+        open(page_path + "/html/footer.html").read()
     return text
 
 

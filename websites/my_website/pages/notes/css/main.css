@@ -7,13 +7,18 @@ body {
 }
 
 .CodeMirror {
-    width: 85%;
+    width: 80%;
     height: 100%;
 }
 
 #mySidenav {
-    width: 15%;
+    width: 20%;
     float: left;
+    background-color: #f4f4f4;
+}
+
+.CodeMirror-gutter {
+    background: #DCD0C0;
 }
 
 .sidenav {
@@ -26,16 +31,17 @@ body {
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 4px 4px 4px 24px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #373737;
     display: block;
     transition: 0.3s;
+    font-weight: 200;
 }
 
 #body_div {
-    width: 85%;
+    width: 80%;
     height: 100%;
     float: right;
 }

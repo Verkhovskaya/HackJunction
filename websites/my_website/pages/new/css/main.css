@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#outer {
+    display: block;
+    min-height: 100%;
+    padding: 3em;
+    background: #f4f4f4;
+}
+
+.card {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+a {
+    color: black;
+}

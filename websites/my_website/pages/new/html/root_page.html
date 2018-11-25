@@ -1,0 +1,39 @@
+<div id="outer">
+  <h1> Welcome to MyWeb! </h1>
+  <h2 style="font-weight: 200"> Click a page to add it to your website </h2>
+  <br>
+
+  <div class="card-deck" style="margin: 1em;">
+    <div class="card" style="margin-left: 3em;margin-right: 3em;border: solid #C0B283;border-radius: 10px;">
+      <a href="http://$$domain$$/notes">
+      <img style="padding: 2em; padding-bottom: 0; border-radius: 1em;" class="card-img-top" src="/new/img/notes.png" alt="Card image cap">
+      <hr style="margin-top: 1em; margin-bottom: 0">
+        <div class="card-body">
+        <h3 class="card-title">Notes</h3>
+        <h5 class="card-text" style="font-weight: 300">Write your todos, or plot taking over the world. Either way, only YOU have access to your data </h5>
+      </div>
+      </a>
+    </div>
+    <div class="card" style="margin-left: 3em;margin-right: 3em;border: solid #C0B283;border-radius: 10px;">
+      <a href="http://$$domain$$/social">
+      <img style="padding: 2em; padding-bottom: 0; border-radius: 1em;" class="card-img-top" src="/new/img/social.png" alt="Card image cap">
+      <hr style="margin-top: 1em; margin-bottom: 0">
+        <div class="card-body">
+        <h3 class="card-title">Social</h3>
+        <h5 class="card-text" style="font-weight: 300">Social media, but better. Control who can access your posts, no third parties necessary.  </h5>
+      </div>
+      </a>
+    </div>
+  </div>
+  <br>
+
+  <div style="border: solid #C0B283;padding: 1em;border-radius: 10px;margin-top: 2em; background: white;
+    margin-left: 3.95em;
+    margin-right: 3.95em;">
+    <h4> Browse <a href="https://github.com/Verkhovskaya/MyWeb_template"> github </a> for MyWeb-compatible pages and upload them here: </h4>
+    <form action="/new/upload" method="post" enctype="multipart/form-data">
+        Page .zip file: <input type="file" name="zip_file"> <br>
+        <button style="margin-top: 0.5em;" type="submit" class="btn btn-secondary"> Add page </button>
+    </form>
+  </div>
+</div>

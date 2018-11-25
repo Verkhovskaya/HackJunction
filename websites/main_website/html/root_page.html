@@ -2,25 +2,56 @@
 
 <div class="card bg-dark text-white">
   <img class="card-img" src="/img" alt="Card image">
-  <div class="card-img-overlay" style="text-align: center; margin-top: 15em">
-    <h1 class="card-title">PROJECT TITLE</h1>
-    <h2 class="card-text">Easily get a website that runs your notes, social media, blah blah blah</h2>
+  <div class="card-img-overlay" style="text-align: center;">
+      <div style="
+    background: #383e52ba;
+    margin: 1em;
+    width: 60%;
+    margin-left: 20%;
+    padding: 2em;
+    margin-top: 4em;
+    border-radius: 1em;">
+
+    <h1 class="display-2">MyWeb</h1>
+    <h2 class="card-text" style="
+    font-weight: 200;">Easily set up a website that hosts your notes, social media, and anything else</h2>
       <br> <br>
-      <a href="http://159.89.105.47/new_page"> <h1> <button> Demo </button> </h1></a>
-      <br> <br>
+      <a href="http://159.89.105.47/new"> <button class="btn btn-secondary" style="border-radius: 10px; background: #C0B283;
+    font-weight: 600;" > <h1> Demo </h1></button> </a>
+      <hr style="
+    background: white;
+    margin-top: 4em;
+    margin-bottom: 3em;
+">
     <form action="/setup_new_page" method="post">
-        <h3> IP address: </h3>
+        <h3 style="
+    font-weight: 150;
+"> Ubuntu computer with LAMP stack </h3>
+        <div class="container">
+
+          <div class="row">
+              <div class="col-sm"></div>
+            <div class="col-sm">
+        <h4 style="
+    font-weight: 100;
+"> IP address: </h4>
         <input type="text" name="ip_address"><br>
-        <h3> Password: </h3>
+            </div>
+            <div class="col-sm">
+        <h4 style="
+    font-weight: 100;
+"> Password: </h4>
         <input type="text" name="password"> <br>
+            </div>
+
+              <div class="col-sm"></div>
+          </div>
+        </div>
         <br>
-        <h3> <input type="submit" value="Lets go!"> </h3>
+        <button type="submit" class="btn btn-secondary" style="border-radius: 10px; background: #C0B283"><h3 style="
+    font-weight: 300;
+">  Upload MyWeb </h3></button>
     </form>
+      </div>
   </div>
 </div>
-
-<h2> A platform for easily setting up your own website. Control your own data, <> and <>, with only three clicks </h2>
-
-<h3> Step 1: Create a new VM and give us the password </h3>
-<h3> Step 2: We will set everything up for you </h3>
-<h3> Step 3: Change the password and enjoy your new website </h3>

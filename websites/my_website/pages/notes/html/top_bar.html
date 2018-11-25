@@ -1,7 +1,13 @@
-<div id="top_bar">
+<div id="top_bar" style="
+    padding-top: 1em;
+    padding-left: 22%;
+    padding-bottom: 1em;
+    /* display: block; */
+    /* float: right; */
+    background: #c0b283;">
     <form>
-        <input type="text" value="$$note_title$$">
-        <input type="submit" value="rename">
-        <a href="/delete/$$note_title$$"> Delete note </a>
+        <input id="note_title" type="text" value="$$note_title$$">
+        <button  class="btn-secondary" style="border-radius: 5px" onclick="save()"> Save </button>
+        <button  class="btn-secondary" style="display: none; border-radius: 5px" onclick="function() {window.location.href = '/notes/delete/new_noteasdf'}"> Delete  </button>
     </form>
 </div>

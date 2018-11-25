@@ -1,49 +1,52 @@
+<div style="padding-top:3em; padding-bottom: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background: #f4f4f4;">
+
 <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+  <a class="btn btn-light" style="
+    border: 1px solid grey;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
     Control access
   </a>
 </p>
 <div class="collapse show" id="collapseExample">
   <div class="card card-body">
-    <h2> People you're following </h2>
+    <h2> Friends </h2>
     <div id="stalkees_div"></div>
 
-<br>
-    <h4> Follow a new person </h4>
-    <form action="/new_stalkee" method="post">
-    Website: <input type="text" name="stalkee_website"><br>
-    Message: <input type="text" name="stalkee_message"><br>
-    <input type="submit" value="Send request">
-    </form>
-<br>
-<h2> Who has access: </h2>
-
+<h4> Incoming requests: </h4>
 <form>
     <div id="stalkers_div"></div>
 </form>
 
+<br>
+    <h3> Follow a new person </h3>
+    <form action="/social/new_stalkee/$$my_ip$$" method="post">
+    Website: <input type="text" name="stalkee_website"><br> <br>
+    <button class="btn btn-secondary" type="submit" style="background: #C0B283">Follow
+</button>
+    </form>
+<br>
+
   </div>
 </div>
 
 <br>
-<p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#my_posts" role="button" aria-expanded="true" aria-controls="collapseExample">
-    My posts
-  </a>
-</p>
 
 <div class="collapse show" id="my_posts" >
   <div class="card card-body">
     <h4> New post</h4>
-    <form action="/new_post" method="post">
+    <form action="/social/new_post" method="post" enctype="multipart/form-data">
     Text: <input type="text" name="new_post_text"><br>
-    Photo: <input type="file" name="new_post_img" accept="image/*"> <br>
-    <input type="submit" value="Post">
+    Photo: <input type="file" name="new_post_img"> <br> <br>
+    <button class="btn btn-secondary" type="submit" style="background: #C0B283">Post
+</button>
     </form>
   </div>
 
     <div id="my_posts_div"></div>
+
+    <hr>
+<div id="friends_posts_div"></div>
 </div>
-
-
-$$friends_posts$$
+</div>

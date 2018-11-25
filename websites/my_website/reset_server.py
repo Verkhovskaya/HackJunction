@@ -17,8 +17,8 @@ for i in range(len(pages)):
         apache_config.write("ProxyPassReverse \"http://0.0.0.0:" + str(8080+i) + "\"\n")
         apache_config.write("</Location>\n")
 
-
 apache_config.write("</VirtualHost>")
 apache_config.close()
 
 os.system("systemctl restart apache2")
+print("Done reset server")
